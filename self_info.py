@@ -1,5 +1,7 @@
 import requests
-from constants import BASE_URL,APP_ACCESS_TOKEN
+import urllib
+from constants import BASE_URL, APP_ACCESS_TOKEN
+from constants import BASE_URL, APP_ACCESS_TOKEN
 def self_info():
     request_url = (BASE_URL + 'users/self/?access_token=%s') % (APP_ACCESS_TOKEN)
     print
