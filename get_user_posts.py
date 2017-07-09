@@ -25,3 +25,4 @@ def get_users_post(insta_username):
             print ("There is no recent post!")
     else:
         print ('Status code other than 200 received!')
+print(get_users_post("rahulkoundal1996"))
