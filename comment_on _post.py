@@ -14,3 +14,4 @@ def comment_on_a_users_post(insta_username):
         print("comment was successful")
     else:
         print("comment not successful")
+comment_on_a_users_post("eviledmpredator")

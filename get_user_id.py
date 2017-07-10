@@ -26,4 +26,4 @@ def get_user_id(insta_username):
             print("No user found")
     else:
         print("Status code other than 200 found")
-print(get_user_id("rahulkoundal1996"))
+print(get_user_id("eviledmpredator"))

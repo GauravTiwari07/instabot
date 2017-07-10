@@ -1,22 +1,24 @@
 import requests
-import urllib
+import urllib3
 from constants import BASE_URL, APP_ACCESS_TOKEN
 
 def get_own_post():
     #function logic
-    request_url = (BASE_URL + 'users/self/media/recent/?access_token=%s') % (APP_ACCESS_TOKEN)
-    print('GET request url : %s' % (request_url))
-    own_media = requests.get(request_url).json()
+        req_url = BASE_URL + 'users/self/media/recent/?access_token=' + APP_ACCESS_TOKEN
+        media_self = requests.get(req_url).json()
 
-    if own_media['meta']['code'] == 200:
-        # extract post ID
-        if len(own_media['data']):
-            image_name = own_media['data'][0]['id'] + '.jpeg'
-            image_url = own_media['data'][0]['images']['standard_resolution']['url']
-            urllib.urlretrieve(image_url, image_name)
-            print ('Your image has been downloaded!')
+        if media_self['meta']['code'] == 200:
+            if len(media_self['data']):
+                rec_img = media_self['data'][0]['images']['standard_resolution']['url']
+                urllib3.disable_warnings()
+                conn = urllib3.PoolManager()
+                response = conn.request('GET', rec_img)
+                f = open('own_post.jpg', 'wb')
+                f.write(response.data)
+                f.close()
+                print('Your post was downloaded')
+            else:
+                print('Post does not exist!')
         else:
-            print ('Post does not exist!')
-    else:
-        print ('Status code other than 200 received!')
+            print('Status code other than 200 received!')
 get_own_post()
