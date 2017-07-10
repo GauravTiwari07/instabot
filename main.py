@@ -4,6 +4,8 @@ from get_user_info import get_user_info
 from get_user_posts import get_users_post
 from constants import APP_ACCESS_TOKEN, BASE_URL
 from self_info import self_info
+from comment_on_post  import comment_on_a_users_post
+from list_comments import get_list_of_comments_on_users_post
 while True:
     choice = input("Enter you choice:\n1.gey self information \n2.get own post \n3.get user's information \n4.get user's id \n5.get user's post")
     choice = int(choice)
