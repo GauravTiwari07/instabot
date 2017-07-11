@@ -8,10 +8,11 @@ from self_info import self_info
 from like_user_posts import like_a_post
 from comment import comment_on_a_users_post
 from list_comments import get_list_of_comments_on_users_post
+from targeted_comment import target_a_comment
 import time
 menu = "\nChoose from the following options:\n1.View your own details\n2.Get user_id of an instagram user\n" \
        "3.Retrieve Your latest post\n4.Retrieve a user's latest post\n5.Recent media liked by you\n" \
-       "6.Like a user's post\n7.Get List of comments on a user's post\n8.Comment on a user's post\n9.exit\n"
+       "6.Like a user's post\n7.Get List of comments on a user's post\n8.Comment on a user's post\n9.targeted_comments\n10.exit\n"
 # creating High level design of function show_menu()
 def show_menu():
     insta_username = input("Enter the username for which you want to perform these actions")
@@ -44,6 +45,9 @@ def show_menu():
             comment_on_a_users_post(insta_username)
             show_menu()
         elif choice == 9:
+            target_a_comment(insta_username)
+            show_menu()
+        elif choice == 10:
             exit(code="Application Closed")
         else:
             exit(code="You did'nt entered one of the choices above")
