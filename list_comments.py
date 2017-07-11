@@ -4,7 +4,8 @@ from get_user_posts import get_users_post
 from get_user_id import get_user_id
 
 
-def get_list_of_comments_on_users_post(username):
+def get_list_of_comments_on_users_post(username):#defining class list of comments
+   #program logic.
     post_id = get_user_id(username)
     req_url = BASE_URL + 'media/' + post_id + '/comments?access_token=' + APP_ACCESS_TOKEN
     comments_here = requests.get(req_url).json()
