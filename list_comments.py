@@ -3,6 +3,7 @@ from constants import BASE_URL, APP_ACCESS_TOKEN
 from get_user_posts import get_users_post
 from get_user_id import get_user_id
 
+
 def get_list_of_comments_on_users_post(username):
     post_id = get_user_id(username)
     req_url = BASE_URL + 'media/' + post_id + '/comments?access_token=' + APP_ACCESS_TOKEN
@@ -16,4 +17,3 @@ def get_list_of_comments_on_users_post(username):
     else:
             print('Status code other than 200!!!')
 
-get_list_of_comments_on_users_post("eviledmpredator")

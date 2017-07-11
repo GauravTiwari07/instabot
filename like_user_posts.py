@@ -1,6 +1,7 @@
 import requests
 from constants import BASE_URL, APP_ACCESS_TOKEN
 from get_user_posts import get_users_post
+
 username = "eviledmpredator"
 def like_a_post(insta_username):
   post_id = get_users_post(insta_username)
@@ -15,4 +16,4 @@ def like_a_post(insta_username):
     print ("Post Liked Successfully")
   else:
     print ("Unable to like post")
-like_a_post(username)
+

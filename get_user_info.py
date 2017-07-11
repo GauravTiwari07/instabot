@@ -1,6 +1,7 @@
 import requests
 from constants import APP_ACCESS_TOKEN, BASE_URL
 from get_user_id import get_user_id
+
 def get_user_info(insta_username):
     #functions logic
     user_id = get_user_id(insta_username)
@@ -21,4 +22,4 @@ def get_user_info(insta_username):
             print ('There is no data for this user!')
     else:
         print ('Status code other than 200 received!')
-get_user_info("eviledmpredator")
+

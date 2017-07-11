@@ -3,6 +3,7 @@ import urllib3
 from constants import APP_ACCESS_TOKEN, BASE_URL
 from get_user_id import get_user_id
 
+
 def get_users_post(insta_username):
     #function logic
     user_id = get_user_id(insta_username)
@@ -27,4 +28,3 @@ def get_users_post(insta_username):
         print('Status code other than 200 received!')
 
 
-print(get_users_post("eviledmpredator"))
